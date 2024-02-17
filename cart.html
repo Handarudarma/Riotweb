@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riot Product Corner</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background: url('assets/images/background3.jpg') center/cover no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+       header {
+    background-color: #242533;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin-right: 10px;
+    margin-left: 10px; 
+}
+
+        container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        cart {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 3px;
+        }
+
+        cart-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        cart-total {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Riot Product Corner</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <container>
+        <cart>
+            <product>
+                <img src="assets/images/merc/CPX_ApexKDAAkali_Ecomm_4.png" alt="Game 1">
+                <h3>FIGURE APEX POP/STARS K/DA AKALI 1/7 SCALE</h3>
+                <p>$184.99</p>
+                <button onclick="addToCart('Game 1', 29.99)">Add to Cart</button>
+            </product>
+
+            <product>
+                <img src="assets/images/merc/CPX_DimRemixRumble_ScratchHoodie_Ecomm_1.png" alt="Game 2">
+                <h3>SCRATCH HOODIE DIM MAK X TEAMFIGHT TACTICS</h3>
+                <p>$79.99</p>
+                <button onclick="addToCart('Game 2', 39.99)">Add to Cart</button>
+            </product>
+
+            <product>
+                <img src="assets/images/merc/CPX_JIMEISett_Ecomm_2.png" alt="Game 3">
+                <h3>STATUE  JIMEI PALACE SETT 1/6 SCALE</h3>
+                <p>$439.99</p>
+                <button onclick="addToCart('Game 3', 19.99)">Add to Cart</button>
+            </product>
+
+            <product>
+                <img src="assets/images/merc/2022_Promo_TFT-Moment_Ecomm_FKTee-White_01.png" alt="Game 4">
+                <h3>WHITE TEE FEATHERKNIGHT</h3>
+                <p>$30.00</p>
+                <button onclick="addToCart('Game 4', 49.99)">Add to Cart</button>
+            </product>
+        </cart>
+
+        <cart-total>
+            <h3>Cart Total: $<span id="cartTotal">0.00</span></h3>
+            <button onclick="checkout()">Checkout</button>
+        </cart-total>
+    </container>
+
+    <script>
+        let cartTotal = 0;
+
+        function addToCart(productName, productPrice) {
+            cartTotal += productPrice;
+            document.getElementById('cartTotal').textContent = cartTotal.toFixed(2);
+        }
+
+        function checkout() {
+            alert('Thank you for your purchase!');
+            
+        }
+    </script>
+</body>
+</html>
